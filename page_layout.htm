@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Imperial Visualisations</title>
+
+    <link rel="icon" href="https://www.imperial.ac.uk/T4Assets/favicon-196x196.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://rawgit.com/cydcowley/public-test-data/master/Style2.css">
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/mathjs/3.16.2/math.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src = "http://www.numericjs.com/lib/numeric-1.2.6.js"></script>
+    <script src = 1D_rod.js></script>
+    <script src = control.js></script>
+  </head>
+
+<body>
+  <h1> Finite Element: Rod Analysis </h1>
+
+    <div class = "row">
+
+      <div class = "four columns" id = maths>
+        maths derivation <br>
+        <br>
+        <img src="pic/maths.png" alt="maths" width = "500"/>
+      </div>
+
+      <div class = "five columns" id = visual>
+        visual <br>
+        <div class = "row">
+          <div class = "twelve columns">
+            <img src="pic/fe.png" alt="maths" width = "500"/>
+          </div>
+        </div>
+      </div>
+
+      <div class = "three columns" id = contorl>
+        user control panel <br>
+        <div id="interface">
+          <div id="angle-slider">
+            <label for="angle" class="sliderTitle">
+              Number of elements:
+              <span id="angle-display">2</span>
+            </label>
+            <input type="range" id="angle" name="angle" min="1" max="5" value="2">
+            <span class="sliderMin">1</span><span class="sliderMax">5</span>
+          </div>
+          <div id="refractive-index-slider">
+            <label for="refractive-index" class="sliderTitle">
+              Nodal forces:
+              <span id="refractive-index-display">6</span>
+            </label>
+            <input type="range" id="refractive-index" name="refractive-index" min="0" max="10" step="0.02" value="1.5">
+            <span class="sliderMin">0</span><span class="sliderMax">10</span>
+          </div>
+          <div id="interference-checkbox">
+            <label for="interference" class="checkbox" data-title="Show interference">
+              <input type="checkbox" id="interference" name="interference" checked="checked">
+              <span></span>
+            </label>
+          </div>
+          <div class="spoiler">
+              <div id="ParamFree" class="inner" style="display: none;">
+                  <form> <!-- Creates the fields for the user input parameters -->
+                      k = <input type="number" id="spring" onchange="AVD_graph()"   style="width: 140px" placeholder="Stiffness spring">
+                      c = <input type="number" id="damping"  onchange="AVD_graph()" style="width: 110px" placeholder="Damping">
+                      m = <input type="number" id="mass"   onchange="AVD_graph()"  style="width: 90px"placeholder="Mass"> <br>
+                      r<sub>0</sub>= <input type="number" id="initial displacement" onchange="AVD_graph()"  style="width: 158px" placeholder="Initial displacement">
+                      v<sub>0</sub>= <input type="number" id="initial velocity" onchange="AVD_graph()" style="width: 131px" placeholder="Initial velocity">
+                  </form>
+              </div>
+          </div>
+        </div>
+
+
+</body>
+
+</html>
