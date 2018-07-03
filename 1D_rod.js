@@ -1,3 +1,4 @@
+/*
 const math = require('math.js')
 
 const E = 1;
@@ -41,3 +42,13 @@ const K_inv = numeric.inv(K);
 let u = [];
 
 u = numeric.dot(K_inv, F);
+*/
+TESTER = document.getElementById('tester');
+
+Plotly.plot( TESTER, [{
+    x: [0,1,2],
+    y: [0,0,0] }], {
+    margin: { t: 0 } } );
+
+/* Current Plotly.js version */
+console.log( Plotly.BUILD );

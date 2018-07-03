@@ -3,12 +3,11 @@ window.onload = function() {
     var dom = {
         intface: $("#interface"),
         loadSpinner: $("#spinner-wrapper"),
-
         refractiveIndexInput: $("input#refractive-index"),
         refractiveIndexDisplay: $("#refractive-index-display"),
         angleInput: $("input#angle"),
         angleDisplay: $("#angle-display"),
-
+        interferenceInput: $("input#interference")
     };
 
     var canvas = document.getElementById("graph"),
@@ -19,20 +18,12 @@ window.onload = function() {
         graph.imageData = graph.ctx.getImageData(0, 0, graph.dim, graph.dim);
         graph.numPixels = graph.dim * graph.dim;
 
-    function handleRefractiveIndexSlider() {
-        Boundary.pauseAnimation();
-        Boundary.n2 = $(this).val();
-        dom.refractiveIndexDisplay.html($(this).val());
-        Boundary.createWaves();
-        Boundary.playAnimation();
+    function handleNodalForceSlider() {
+
     }
 
-    function handleAngleSlider() {
-        Boundary.pauseAnimation();
-        Boundary.theta = degToRad($(this).val());
-        dom.angleDisplay.html($(this).val().concat("&deg;"));
-        Boundary.createWaves();
-        Boundary.playAnimation();
+    function handleElementSlider() {
+
     }
 
     var cmath = math,
