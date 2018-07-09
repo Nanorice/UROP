@@ -75,12 +75,8 @@
       </div>
 -->
 
-      <div class = "seven columns">
-        &emsp; &emsp; &emsp; &emsp; Visual </br>
-
-      </br>
-    </br>
-        <div id="graph" style="width:500px; height:300px;"></div>
+      <div id="tester" class = "seven columns">
+        &emsp; &emsp; &emsp; &emsp; Visual <br>
       </div>
 
 
@@ -149,6 +145,16 @@
 
 </body>
 
-<script src = "control.js"></script>
+<script>
+  TESTER = document.getElementById('tester');
+
+  Plotly.plot( TESTER, [{
+      x: [0,1,2],
+      y: [0,0,0] }], {
+      margin: { t: 0 } } );
+
+  /* Current Plotly.js version */
+  console.log( Plotly.BUILD );
+</script>
 
 </html>
